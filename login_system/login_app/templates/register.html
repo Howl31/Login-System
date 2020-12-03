@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="registration-form">
+        <h1 style="color:tomato;">Registration Form</h1>
+
+        {% for message in messages %}
+            <h6 style="text-align: center; font-size: 18px;"><mark style="color: tomato;">{{ message }}</mark></h6>
+        {% endfor %}
+
+        <form method="post">
+            {% csrf_token %}
+            <p>First Name:</p>
+            <input type="text" name="firstname" placeholder="First Name">
+            <p>Last Name:</p>
+            <input type="text" name="lastname" placeholder="Last Name">
+            <p>Username:</p>
+            <input type="text" name="username" placeholder="Username">
+            <p>Email:</p>
+            <input type="email" name="email" placeholder="Email">
+            <p>Password:</p>
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit"> Register </button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="login-box">
+        {% for message in messages %}
+            <h6 style="text-align: center; font-size:18px;"><mark style="color: green;">{{ message }}</mark></h6>
+        {% endfor %}
+        <form method="post">
+            {% csrf_token %}
+        <h1>Login</h1>
+        <div class="textbox">
+            <i class="fas fa-user" style="color:white;"></i>
+            <input type="text" placeholder="Username" name="uname" value="">
+        </div>
+        <div class="textbox">
+            <i class="fas fa-lock" style="color:white;"></i>
+            <input type="password" placeholder="Password" name="pass" value="">
+        </div>
+        <input type="submit" value="Login" class="form-control btn btn-primary">
+        </form>
+    </div>
+</body>
+</html>
