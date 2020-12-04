@@ -50,3 +50,10 @@ def register(request):
             user.save()
             return redirect('login')
     return render(request, 'register.html')
+
+
+def logout(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    auth.logout(request)
+    return redirect('login')

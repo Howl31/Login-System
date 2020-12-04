@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
 <body>
 <h1 style="text-align:center;">Index page</h1>
 <h3 style="text-align:center;">hello {{request.user.first_name}} {{request.user.last_name}} </h3>
+<div class="wrapper">
+<button type="submit"><a href="{% url 'logout' %}">Logout</a></button>
+</div>
 </body>
 </html>

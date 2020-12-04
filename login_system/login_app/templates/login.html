@@ -25,6 +25,8 @@
             <input type="password" placeholder="Password" name="pass" value="">
         </div>
         <input type="submit" value="Login" class="form-control btn btn-primary">
+        <p style="color:white;">Not Registered Yet? <a style="color: white; font-weight: bold;" href="{% url 'register' %}"> Register Here</a></p>
+        <p style="color:white;">Forgot Password? <a style="color: white;" href="{% url 'password_reset' %}"> Reset Here</a></p>
         </form>
     </div>
 </body>
